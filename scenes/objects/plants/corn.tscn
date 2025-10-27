@@ -14,6 +14,7 @@ size = Vector2(13, 8)
 script = ExtResource("1_hgaca")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -4)
 texture = ExtResource("1_hm4is")
 hframes = 6
