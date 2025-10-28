@@ -1,14 +1,12 @@
-[gd_scene load_steps=19 format=4 uid="uid://bqexs74vgdcg4"]
+[gd_scene load_steps=11 format=4 uid="uid://bqexs74vgdcg4"]
 
 [ext_resource type="TileSet" uid="uid://3eba1guf2c3q" path="res://tilesets/game_tile_set.tres" id="1_tpjx8"]
 [ext_resource type="PackedScene" uid="uid://dxm3dmajglnk7" path="res://scenes/characters/player/player.tscn" id="2_8m803"]
 [ext_resource type="PackedScene" uid="uid://i61ui5464qj1" path="res://scenes/characters/chicken/chicken.tscn" id="3_xtvuu"]
+[ext_resource type="PackedScene" uid="uid://n6h2ulx6etra" path="res://scenes/components/field_cursor_component.tscn" id="4_br771"]
 [ext_resource type="PackedScene" uid="uid://bp7lwrqk05y3n" path="res://scenes/characters/cow/cow.tscn" id="4_offp7"]
-[ext_resource type="PackedScene" uid="uid://o473qkoxh0q4" path="res://scenes/objects/rocks/rock.tscn" id="5_fa21d"]
-[ext_resource type="Shader" uid="uid://i17msnmk7wbi" path="res://scenes/objects/shake.gdshader" id="6_xn8ur"]
+[ext_resource type="PackedScene" uid="uid://bagvevfqr2ocb" path="res://scenes/components/crops_cursor_component.tscn" id="5_6d0h6"]
 [ext_resource type="PackedScene" uid="uid://xjbm6uj6m7dk" path="res://scenes/ui/game_screen.tscn" id="7_dof10"]
-[ext_resource type="PackedScene" uid="uid://cw0ynubqhbgo" path="res://scenes/objects/trees/large_tree.tscn" id="9_7miqj"]
-[ext_resource type="PackedScene" uid="uid://bw7juvbdep8tw" path="res://scenes/objects/trees/small_tree.tscn" id="10_72r7w"]
 [ext_resource type="PackedScene" uid="uid://dtrq4qc02rq2i" path="res://scenes/components/day_night_cycle_component.tscn" id="11_xn8ur"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jtmit"]
@@ -22,42 +20,6 @@ vertices = PackedVector2Array(475, 182, 400.1875, 182, 400.3125, 170, 405, 170, 
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 3), PackedInt32Array(10, 11, 0), PackedInt32Array(10, 0, 3), PackedInt32Array(8, 3, 12, 13), PackedInt32Array(13, 12, 7, 6), PackedInt32Array(4, 7, 14, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(571, 54, 571, 153, 489, 153, 489, 201, 390, 201, 391, 100, 487, 103, 487, 52)])
 source_geometry_mode = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j37ir"]
-resource_local_to_scene = true
-shader = ExtResource("6_xn8ur")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_40mfr"]
-resource_local_to_scene = true
-shader = ExtResource("6_xn8ur")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_irb5g"]
-resource_local_to_scene = true
-shader = ExtResource("6_xn8ur")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpa6m"]
-resource_local_to_scene = true
-shader = ExtResource("6_xn8ur")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ll7d"]
-resource_local_to_scene = true
-shader = ExtResource("6_xn8ur")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5emx8"]
-resource_local_to_scene = true
-shader = ExtResource("6_xn8ur")
-shader_parameter/shake_intensity = 0.0
-shader_parameter/shake_speed = 20.0
 
 [node name="ShowOffScene" type="Node2D"]
 y_sort_enabled = true
@@ -82,7 +44,10 @@ tile_set = ExtResource("1_tpjx8")
 
 [node name="Objects" type="TileMapLayer" parent="GameTileMap" groups=["navigation_polygon_source_geometry_group"]]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAHAAUABQABAAAAAAAIAAUABQACAAMAAAAJAAUABQACAAMAAAAKAAUABQACAAMAAAALAAUABQACAAAAAAAMAAUABQACAAMAAAANAAUABQACAAMAAAAOAAUABQACAAMAAAAPAAUABQADAAAAAAAPAAYABQAAAAEAAAAPAAcABQAAAAEAAAAPAAgABQAAAAEAAAAPAAkABQAAAAEAAAAHAAYABQAAAAEAAAAHAAcABQAAAAEAAAAHAAgABQAAAAEAAAAHAAkABQAAAAEAAAAHAAoABQAAAAEAAAAHAAsABQAAAAEAAAAHAAwABQABAAIAAAAIAAwABQACAAMAAAAJAAwABQADAAMAAAALAAYABQAAAAEAAAALAAcABQAAAAEAAAALAAgABQAAAAEAAAALAAkABQAAAAIAAAAPAAoABQAAAAEAAAAPAAsABQAAAAEAAAAPAAwABQADAAIAAAAOAAwABQACAAMAAAANAAwABQABAAMAAAAeAAMABQABAAAAAAAfAAMABQACAAMAAAAhAAMABQACAAMAAAAgAAMABQACAAMAAAAiAAMABQACAAMAAAAjAAMABQADAAAAAAAjAAQABQAAAAEAAAAjAAUABQAAAAEAAAAjAAYABQAAAAEAAAAjAAcABQAAAAEAAAAjAAgABQAAAAEAAAAjAAkABQADAAIAAAAeAAQABQAAAAEAAAAeAAUABQAAAAEAAAAeAAYABQADAAIAAAAdAAYABQACAAMAAAAcAAYABQACAAMAAAAbAAYABQACAAMAAAAaAAYABQACAAMAAAAZAAYABQACAAMAAAAYAAYABQABAAAAAAAYAAcABQAAAAEAAAAiAAkABQACAAMAAAAhAAkABQACAAMAAAAgAAkABQACAAMAAAAfAAkABQACAAMAAAAeAAkABQACAAAAAAAeAAoABQAAAAEAAAAeAAsABQAAAAEAAAAeAAwABQADAAIAAAAdAAwABQACAAMAAAAcAAwABQACAAMAAAAbAAwABQACAAMAAAAaAAwABQACAAMAAAAZAAwABQACAAMAAAAYAAwABQABAAMAAAAdAAkABQACAAMAAAAcAAkABQABAAMAAAAYAAgABQAAAAEAAAAYAAkABQAAAAIAAAAQAAYABAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAHAAUABQABAAAAAAAIAAUABQACAAMAAAAJAAUABQACAAMAAAAKAAUABQACAAMAAAALAAUABQACAAAAAAAMAAUABQACAAMAAAANAAUABQACAAMAAAAOAAUABQACAAMAAAAPAAUABQADAAAAAAAPAAYABQAAAAEAAAAPAAcABQAAAAEAAAAPAAgABQAAAAEAAAAPAAkABQAAAAEAAAAHAAYABQAAAAEAAAAHAAcABQAAAAEAAAAHAAgABQAAAAEAAAAHAAkABQAAAAEAAAAHAAoABQAAAAEAAAAHAAsABQAAAAEAAAAHAAwABQABAAIAAAAIAAwABQACAAMAAAAJAAwABQADAAMAAAALAAYABQAAAAEAAAALAAcABQAAAAEAAAALAAgABQAAAAEAAAALAAkABQAAAAIAAAAPAAoABQAAAAEAAAAPAAsABQAAAAEAAAAPAAwABQADAAIAAAAOAAwABQACAAMAAAANAAwABQABAAMAAAAeAAMABQABAAAAAAAfAAMABQACAAMAAAAhAAMABQACAAMAAAAgAAMABQACAAMAAAAiAAMABQACAAMAAAAjAAMABQADAAAAAAAjAAQABQAAAAEAAAAjAAUABQAAAAEAAAAjAAYABQAAAAEAAAAjAAcABQAAAAEAAAAjAAgABQAAAAEAAAAjAAkABQADAAIAAAAeAAQABQAAAAEAAAAeAAUABQAAAAEAAAAeAAYABQADAAIAAAAdAAYABQACAAMAAAAcAAYABQACAAMAAAAbAAYABQACAAMAAAAaAAYABQACAAMAAAAZAAYABQACAAMAAAAYAAYABQABAAAAAAAYAAcABQAAAAEAAAAiAAkABQACAAMAAAAhAAkABQACAAMAAAAgAAkABQACAAMAAAAfAAkABQACAAMAAAAeAAkABQACAAAAAAAeAAoABQAAAAEAAAAeAAsABQAAAAEAAAAeAAwABQADAAIAAAAdAAwABQACAAMAAAAcAAwABQACAAMAAAAbAAwABQACAAMAAAAaAAwABQACAAMAAAAZAAwABQACAAMAAAAYAAwABQABAAMAAAAdAAkABQACAAMAAAAcAAkABQABAAMAAAAYAAgABQAAAAEAAAAYAAkABQAAAAIAAAAQAAYABAAAAAAAAQAfABIABAAAAAAAAwAHABAABAAAAAAAAwAVAAoABAAAAAAAAwAVAA0ABAAAAAAABAASAAsABAAAAAAABAAcAA0ABAAAAAAAAgAQAA8ABAAAAAAAAgA=")
+tile_set = ExtResource("1_tpjx8")
+
+[node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
 tile_set = ExtResource("1_tpjx8")
 
 [node name="Chickens" type="Node2D" parent="."]
@@ -132,31 +97,16 @@ position = Vector2(519, 91)
 [node name="Cow3" parent="Cows" instance=ExtResource("4_offp7")]
 position = Vector2(535, 126)
 
-[node name="Rock" parent="Cows" instance=ExtResource("5_fa21d")]
-material = SubResource("ShaderMaterial_j37ir")
-position = Vector2(333, 239)
+[node name="CropFields" type="Node2D" parent="."]
 
-[node name="Rock2" parent="Cows" instance=ExtResource("5_fa21d")]
-material = SubResource("ShaderMaterial_40mfr")
-position = Vector2(262, 264)
+[node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("4_br771")]
+grass_tilemap_layer = NodePath("../GameTileMap/Grass")
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
+
+[node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("5_6d0h6")]
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="GameScreen" parent="." instance=ExtResource("7_dof10")]
-
-[node name="LargeTree" parent="." instance=ExtResource("9_7miqj")]
-material = SubResource("ShaderMaterial_irb5g")
-position = Vector2(497, 276)
-
-[node name="LargeTree2" parent="." instance=ExtResource("9_7miqj")]
-material = SubResource("ShaderMaterial_jpa6m")
-position = Vector2(127, 256)
-
-[node name="SmallTree" parent="." instance=ExtResource("10_72r7w")]
-material = SubResource("ShaderMaterial_7ll7d")
-position = Vector2(315, 159)
-
-[node name="SmallTree2" parent="." instance=ExtResource("10_72r7w")]
-material = SubResource("ShaderMaterial_5emx8")
-position = Vector2(409, 161)
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("11_xn8ur")]
 

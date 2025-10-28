@@ -1,13 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://bjc8n83owdncs"]
+[gd_scene load_steps=12 format=4 uid="uid://bjc8n83owdncs"]
 
 [ext_resource type="TileSet" uid="uid://3eba1guf2c3q" path="res://tilesets/game_tile_set.tres" id="1_mapoa"]
 [ext_resource type="PackedScene" uid="uid://dxm3dmajglnk7" path="res://scenes/characters/player/player.tscn" id="2_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://xjbm6uj6m7dk" path="res://scenes/ui/game_screen.tscn" id="3_aolun"]
 [ext_resource type="PackedScene" uid="uid://n6h2ulx6etra" path="res://scenes/components/field_cursor_component.tscn" id="3_mapoa"]
 [ext_resource type="PackedScene" uid="uid://dtrq4qc02rq2i" path="res://scenes/components/day_night_cycle_component.tscn" id="4_bb1mf"]
-[ext_resource type="Script" uid="uid://bl7seqkqv2rhc" path="res://scenes/components/field_cursor_component.gd" id="4_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://bagvevfqr2ocb" path="res://scenes/components/crops_cursor_component.tscn" id="5_aolun"]
-[ext_resource type="Script" uid="uid://r854priqsxrj" path="res://scenes/components/crops_cursor_component.gd" id="6_bb1mf"]
 [ext_resource type="PackedScene" uid="uid://csu2xt87juk0w" path="res://scenes/components/save_data_component.tscn" id="6_dxoer"]
 [ext_resource type="Resource" uid="uid://sfmwj5ijdnju" path="res://resources/tilemap_layer_data_resource.tres" id="7_t4lsr"]
 [ext_resource type="PackedScene" uid="uid://c4bdunggdj3ca" path="res://scenes/components/save_level_data_component.tscn" id="9_w2jyg"]
@@ -42,12 +40,10 @@ save_data_resource = ExtResource("7_t4lsr")
 [node name="CropFields" type="Node2D" parent="."]
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("3_mapoa")]
-script = ExtResource("4_ff0kp")
 grass_tilemap_layer = NodePath("../GameTileMap/Grass")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("5_aolun")]
-script = ExtResource("6_bb1mf")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="Player" parent="." instance=ExtResource("2_ff0kp")]

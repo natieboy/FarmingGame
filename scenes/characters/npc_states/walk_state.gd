@@ -56,7 +56,7 @@ func _on_next_transitions() -> void:
 		transition.emit("Idle")
 
 func _on_enter() -> void:
-	animated_sprite_2d.play("Walk")
+	animated_sprite_2d.play("walk")
 	character.current_walk_cycle = 0
 
 func _on_exit() -> void:
