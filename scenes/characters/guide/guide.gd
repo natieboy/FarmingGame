@@ -24,6 +24,9 @@ func on_interactable_deactivated() -> void:
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -38,7 +41,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start") 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -49,6 +55,9 @@ func on_give_crop_seeds() -> void:
 	ToolManager.enable_tool_button(DataTypes.Tools.PlantTomato)
 >>>>>>> Stashed changes
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
