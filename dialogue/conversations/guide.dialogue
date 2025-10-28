@@ -1,21 +1,4 @@
 ~ start
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 Marlow: [[Hi|Hello|Howdy]], nice to meet you.
 Marlow: Welcome to your new farm.
@@ -28,11 +11,4 @@ Marlow: Here are some seeds to grow some crops.
 - No, I don't want them
 	Teemo: I'm not ready to grow my farm yet.
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 => END

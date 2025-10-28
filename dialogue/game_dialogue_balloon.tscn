@@ -1,33 +1,10 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=5 format=3 uid="uid://bkonm0wqtb3hu"]
-=======
 [gd_scene load_steps=6 format=3 uid="uid://bkonm0wqtb3hu"]
->>>>>>> Stashed changes
-=======
-[gd_scene load_steps=6 format=3 uid="uid://bkonm0wqtb3hu"]
->>>>>>> Stashed changes
-=======
-[gd_scene load_steps=6 format=3 uid="uid://bkonm0wqtb3hu"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://cuju3mg2nxr5c" path="res://dialogue/game_dialogue_balloon.gd" id="1_sjhsj"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_cindb"]
 [ext_resource type="Theme" uid="uid://iejjunrfpvlc" path="res://dialogue/dialogue_balloon_theme.tres" id="2_xkmgq"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aimjp"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 [ext_resource type="PackedScene" uid="uid://dtv5r4ehfe6e1" path="res://scenes/ui/emotes_panel.tscn" id="3_vwqec"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="PackedScene" uid="uid://dtv5r4ehfe6e1" path="res://scenes/ui/emotes_panel.tscn" id="3_vwqec"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="PackedScene" uid="uid://dtv5r4ehfe6e1" path="res://scenes/ui/emotes_panel.tscn" id="3_vwqec"]
->>>>>>> Stashed changes
 
 [node name="GameDialogueBalloon" type="CanvasLayer"]
 layer = 100
@@ -67,18 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
-layout_mode = 2
-
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Panel/Dialogue"]
 layout_mode = 2
 
@@ -91,13 +56,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
@@ -109,19 +67,7 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("2_cindb")]
-=======
 [node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_cindb")]
->>>>>>> Stashed changes
-=======
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_cindb")]
->>>>>>> Stashed changes
-=======
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_cindb")]
->>>>>>> Stashed changes
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
