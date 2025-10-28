@@ -23,6 +23,9 @@ func on_interactable_deactivated() -> void:
 <<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 	in_range = false
@@ -34,7 +37,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().current_scene.add_child(balloon)
 			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start") 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
 func on_give_crop_seeds() -> void:
 	ToolManager.enable_tool_button(DataTypes.Tools.TillGround)
@@ -42,4 +48,7 @@ func on_give_crop_seeds() -> void:
 	ToolManager.enable_tool_button(DataTypes.Tools.PlantCorn)
 	ToolManager.enable_tool_button(DataTypes.Tools.PlantTomato)
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
