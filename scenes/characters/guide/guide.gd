@@ -11,6 +11,8 @@ func _ready() -> void:
 	interactable_component.interactable_activated.connect(on_interactable_activated)
 	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_label_component.hide()
+	
+	GameDialogueManager.give_crop_seeds.connect(on_give_crop_seeds)
 
 func on_interactable_activated() -> void:
 	interactable_label_component.show()
@@ -18,6 +20,11 @@ func on_interactable_activated() -> void:
 
 func on_interactable_deactivated() -> void:
 	interactable_label_component.hide()
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 	in_range = false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -26,3 +33,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
 			get_tree().current_scene.add_child(balloon)
 			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start") 
+<<<<<<< Updated upstream
+=======
+
+func on_give_crop_seeds() -> void:
+	ToolManager.enable_tool_button(DataTypes.Tools.TillGround)
+	ToolManager.enable_tool_button(DataTypes.Tools.WaterCrops)
+	ToolManager.enable_tool_button(DataTypes.Tools.PlantCorn)
+	ToolManager.enable_tool_button(DataTypes.Tools.PlantTomato)
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
