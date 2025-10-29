@@ -20,7 +20,6 @@ func on_interactable_activated() -> void:
 
 func on_interactable_deactivated() -> void:
 	interactable_label_component.hide()
-
 	in_range = false
 
 func _unhandled_input(event: InputEvent) -> void:
