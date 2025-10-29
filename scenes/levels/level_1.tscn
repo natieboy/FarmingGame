@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://c6j74pnw65g6r"]
+[gd_scene load_steps=18 format=4 uid="uid://c6j74pnw65g6r"]
 
 [ext_resource type="PackedScene" uid="uid://c4bdunggdj3ca" path="res://scenes/components/save_level_data_component.tscn" id="1_dnkej"]
 [ext_resource type="TileSet" uid="uid://3eba1guf2c3q" path="res://tilesets/game_tile_set.tres" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://bkirm5ls610w4" path="res://audio/music/on_the_farm_music.tscn" id="1_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://b57jbdvfhxho6" path="res://scenes/houses/large_house.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://csu2xt87juk0w" path="res://scenes/components/save_data_component.tscn" id="3_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://i61ui5464qj1" path="res://scenes/characters/chicken/chicken.tscn" id="3_nsrm0"]
@@ -33,6 +34,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(950, 469, 949, 550, 101
 source_geometry_mode = 2
 
 [node name="Level1" type="Node2D"]
+
+[node name="OnTheFarmMusic" parent="." instance=ExtResource("1_mm8aj")]
+autoplay = true
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("1_dnkej")]
 
