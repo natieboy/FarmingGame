@@ -20,8 +20,6 @@ func on_interactable_activated() -> void:
 
 func on_interactable_deactivated() -> void:
 	interactable_label_component.hide()
-<<<<<<< Updated upstream
-=======
 	in_range = false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -36,4 +34,3 @@ func on_give_crop_seeds() -> void:
 	ToolManager.enable_tool_button(DataTypes.Tools.WaterCrops)
 	ToolManager.enable_tool_button(DataTypes.Tools.PlantCorn)
 	ToolManager.enable_tool_button(DataTypes.Tools.PlantTomato)
->>>>>>> Stashed changes
