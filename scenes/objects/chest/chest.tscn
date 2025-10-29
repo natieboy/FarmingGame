@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://dumlkointj6y0"]
+[gd_scene load_steps=21 format=3 uid="uid://dumlkointj6y0"]
 
 [ext_resource type="Script" uid="uid://dj7ptk0wpftpi" path="res://scenes/objects/chest/chest.gd" id="1_umtkn"]
 [ext_resource type="Texture2D" uid="uid://bptxpilfwwi27" path="res://assets/game/objects/chest.png" id="1_yv7tv"]
 [ext_resource type="PackedScene" uid="uid://cr1xcsh5o0sw3" path="res://scenes/components/interactable_component.tscn" id="2_vmxm4"]
 [ext_resource type="PackedScene" uid="uid://ck68seqn2dila" path="res://scenes/components/interactable_label_component.tscn" id="3_8pawo"]
 [ext_resource type="PackedScene" uid="uid://draj0fyf2r2yf" path="res://scenes/components/feed_component.tscn" id="4_rqprm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umtkn"]
+size = Vector2(16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmxm4"]
 atlas = ExtResource("1_yv7tv")
@@ -106,8 +109,12 @@ radius = 24.020824
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_umtkn"]
 
-[node name="Chest" type="Node2D"]
+[node name="Chest" type="StaticBody2D"]
 script = ExtResource("1_umtkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_umtkn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1ouyk")
@@ -117,6 +124,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
 shape = SubResource("CircleShape2D_8pawo")
+debug_color = Color(0.82068646, 0.33550584, 0.58087015, 0.41960785)
 
 [node name="InteractableLabelComponent" parent="." instance=ExtResource("3_8pawo")]
 offset_left = -29.0
@@ -131,4 +139,4 @@ position = Vector2(19, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent"]
 shape = SubResource("CircleShape2D_umtkn")
-debug_color = Color(0.5254902, 0.5647059, 0.25882354, 0.41960785)
+debug_color = Color(0.2025086, 0.64171815, 0, 0.41960785)
