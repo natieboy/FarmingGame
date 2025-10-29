@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c6j74pnw65g6r"]
+[gd_scene load_steps=14 format=4 uid="uid://c6j74pnw65g6r"]
 
 [ext_resource type="TileSet" uid="uid://3eba1guf2c3q" path="res://tilesets/game_tile_set.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://b57jbdvfhxho6" path="res://scenes/houses/large_house.tscn" id="2_6iamk"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bagvevfqr2ocb" path="res://scenes/components/crops_cursor_component.tscn" id="4_s8va5"]
 [ext_resource type="PackedScene" uid="uid://bp7lwrqk05y3n" path="res://scenes/characters/cow/cow.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://cyf3iskln2p8t" path="res://scenes/characters/guide/guide.tscn" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://dumlkointj6y0" path="res://scenes/objects/chest/chest.tscn" id="8_dga24"]
+[ext_resource type="PackedScene" uid="uid://caftw44wslgom" path="res://scenes/objects/milk.tscn" id="9_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://btfdsg32qvlom" path="res://scenes/objects/egg.tscn" id="10_qxy0u"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nsrm0"]
 vertices = PackedVector2Array(-263, 100, -263, 108.72656, -285, 108.53125, -285, 100, -252, 24, -247, 24, -247, 100, -359, 100, -359, 148, -477, 148, -477, 20, -252, 20)
@@ -130,3 +133,13 @@ position = Vector2(1066, 619)
 
 [node name="Guide" parent="." instance=ExtResource("5_6761a")]
 position = Vector2(-15, 129)
+
+[node name="CowPastureBox" parent="." instance=ExtResource("8_dga24")]
+position = Vector2(-334, 506)
+dialogue_start_command = "start_cow_pasture_box"
+output_reward_scenes = Array[PackedScene]([ExtResource("9_qxy0u")])
+
+[node name="ChickenPastureBox" parent="." instance=ExtResource("8_dga24")]
+position = Vector2(-288, 146)
+dialogue_start_command = "start_chicken_pasture_box"
+output_reward_scenes = Array[PackedScene]([ExtResource("10_qxy0u")])
