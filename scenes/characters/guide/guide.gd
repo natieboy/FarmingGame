@@ -26,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if in_range:
 		if event.is_action_pressed("show_dialogue"):
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
-			get_tree().current_scene.add_child(balloon)
+			get_tree().root.add_child(balloon)
 			balloon.start(load("res://dialogue/conversations/guide.dialogue"), "start") 
 
 func on_give_crop_seeds() -> void:
