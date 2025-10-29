@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://wllo504kvflm"]
+[gd_scene load_steps=6 format=4 uid="uid://wllo504kvflm"]
 
 [ext_resource type="TileSet" uid="uid://3eba1guf2c3q" path="res://tilesets/game_tile_set.tres" id="1_3acs3"]
 [ext_resource type="PackedScene" uid="uid://c57mrolfsdlfo" path="res://scenes/objects/plants/corn.tscn" id="2_b46jp"]
 [ext_resource type="PackedScene" uid="uid://b2jsmxm6j87gr" path="res://scenes/objects/plants/tomato.tscn" id="3_lg8wd"]
 [ext_resource type="PackedScene" uid="uid://dxm3dmajglnk7" path="res://scenes/characters/player/player.tscn" id="4_ifnas"]
+[ext_resource type="PackedScene" uid="uid://b57jbdvfhxho6" path="res://scenes/houses/large_house.tscn" id="5_b46jp"]
 
 [node name="GameMenuScreenBackground" type="Node2D"]
 y_sort_enabled = true
@@ -44,3 +45,6 @@ position = Vector2(117, 174)
 
 [node name="Player" parent="." instance=ExtResource("4_ifnas")]
 position = Vector2(265, 172)
+
+[node name="LargeHouse" parent="." instance=ExtResource("5_b46jp")]
+position = Vector2(349, 219)

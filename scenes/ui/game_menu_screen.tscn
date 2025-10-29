@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwabm7g5nk26d"]
+[gd_scene load_steps=6 format=3 uid="uid://cwabm7g5nk26d"]
 
 [ext_resource type="Theme" uid="uid://cnsibilx81p2v" path="res://scenes/ui/game_ui_theme.tres" id="1_5slcd"]
 [ext_resource type="PackedScene" uid="uid://wllo504kvflm" path="res://scenes/ui/game_menu_screen_background.tscn" id="1_arotu"]
+[ext_resource type="Script" uid="uid://yrwhpd3n7xmg" path="res://scenes/ui/game_menu_screen.gd" id="1_l5nq4"]
+[ext_resource type="PackedScene" uid="uid://dvy0wyu1xardv" path="res://scenes/components/mouse_cursor_component.tscn" id="2_jk4o3"]
+[ext_resource type="Texture2D" uid="uid://4lx1jro2q34j" path="res://assets/ui/mouse_icon.png" id="3_vrg0q"]
 
 [node name="GameMenuScreen" type="CanvasLayer"]
+script = ExtResource("1_l5nq4")
+
+[node name="MouseCursorComponent" parent="." instance=ExtResource("2_jk4o3")]
+cursor_component_texture = ExtResource("3_vrg0q")
 
 [node name="GameMenuScreenBackground" parent="." instance=ExtResource("1_arotu")]
 
@@ -22,7 +29,10 @@ size_flags_vertical = 8
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.45882353, 0.29803923, 0.3764706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 54
 text = "CROPTAILS"
 
@@ -48,3 +58,7 @@ custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "EXIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
