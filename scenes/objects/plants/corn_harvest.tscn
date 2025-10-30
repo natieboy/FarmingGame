@@ -16,6 +16,7 @@ vframes = 2
 frame = 5
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_7itdg")]
+collision_layer = 160
 collectable_name = "corn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
