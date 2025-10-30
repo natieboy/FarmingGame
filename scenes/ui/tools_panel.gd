@@ -21,22 +21,17 @@ func _ready() -> void:
 	tool_tomato.disabled = true
 	tool_tomato.focus_mode = Control.FOCUS_NONE
 
-
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
-
 
 func _on_tool_tilling_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.TillGround)
 
-
 func _on_tool_watering_can_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
 
-
 func _on_tool_corn_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.PlantCorn)
-
 
 func _on_tool_tomato_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.PlantTomato)
@@ -44,11 +39,27 @@ func _on_tool_tomato_pressed() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("release_tool"):
 		ToolManager.select_tool(DataTypes.Tools.None)
-		tool_axe.release_focus()
-		tool_tilling.release_focus()
-		tool_watering_can.release_focus()
-		tool_corn.release_focus()
-		tool_tomato.release_focus()
+		_reset_tool_button_states()
+	
+	elif event.is_action_pressed("toolbar_button_1"):
+		_on_tool_axe_pressed()
+		tool_axe.button_pressed = true
+		
+	elif event.is_action_pressed("toolbar_button_2"):
+		_on_tool_tilling_pressed()
+		tool_tilling.button_pressed = true
+	elif event.is_action_pressed("toolbar_button_3"):
+		_on_tool_watering_can_pressed()
+		tool_watering_can.button_pressed = true
+		
+	elif event.is_action_pressed("toolbar_button_4"):
+		_on_tool_corn_pressed()
+		tool_corn.button_pressed = true
+		
+	elif event.is_action_pressed("toolbar_button_5"):
+		_on_tool_tomato_pressed()
+		tool_tomato.button_pressed = true
+
 
 func on_enable_tool_button(tool: DataTypes.Tools) -> void:
 	if tool == DataTypes.Tools.TillGround:
@@ -63,3 +74,11 @@ func on_enable_tool_button(tool: DataTypes.Tools) -> void:
 	elif tool == DataTypes.Tools.PlantTomato:
 		tool_tomato.disabled = false
 		tool_tomato.focus_mode = Control.FOCUS_ALL
+
+
+func _reset_tool_button_states() -> void:
+	tool_axe.button_pressed = false
+	tool_tilling.button_pressed = false
+	tool_watering_can.button_pressed = false
+	tool_corn.button_pressed = false
+	tool_tomato.button_pressed = false
